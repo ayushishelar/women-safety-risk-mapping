@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>SOS Emergency Assistance</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    color: #292929;
+}
+
+.header {
+    background: linear-gradient(
+        135deg,
+        #b71c1c,
+        #e53935
+    );
+
+    color: white;
+    padding: 22px;
+}
+
+.header h1 {
+    margin: 0 0 5px;
+}
+
+.container {
+    width: 92%;
+    max-width: 700px;
+    margin: 25px auto;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 22px;
+    border-radius: 16px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.08);
+}
+
+.sos-circle {
+    width: 180px;
+    height: 180px;
+
+    margin: 20px auto;
+
+    border: none;
+    border-radius: 50%;
+
+    display: block;
+
+    background: #d32f2f;
+    color: white;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(211,47,47,0.35);
+}
+
+.sos-circle:active {
+    transform: scale(0.96);
+}
+
+.status {
+    text-align: center;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.location-box {
+    display: none;
+
+    padding: 15px;
+
+    margin-top: 15px;
+
+    background: #f5f5f5;
+
+    border-radius: 10px;
+
+    line-height: 1.6;
+}
+
+.action {
+    display: block;
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 12px;
+
+    border: none;
+    border-radius: 9px;
+
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.share {
+    background: #7b1fa2;
+    color: white;
+}
+
+.police {
+    background: #1565c0;
+    color: white;
+}
+
+.hospital {
+    background: #00897b;
+    color: white;
+}
+
+.call {
+    background: #d32f2f;
+    color: white;
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 15px;
+
+    text-decoration: none;
+    color: #7b1fa2;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 7px 0;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+.save-contact {
+    background: #7b1fa2;
+    color: white;
+}
+
+.contact {
+    padding: 12px 0;
+
+    border-bottom:
+        1px solid #eee;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    gap: 10px;
+}
+
+.delete-btn {
+    border: none;
+    background: #ffebee;
+    color: #c62828;
+
+    border-radius: 6px;
+    padding: 6px 10px;
+
+    cursor: pointer;
+}
+
+.warning {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="header">
+
+    <h1>🆘 Emergency SOS</h1>
+
+    <div>
+        Women Safety Emergency Assistance
+    </div>
+
+</div>
+
+
+<div class="container">
+
+
+<a href="/" class="back">
+    ← Back to Dashboard
+</a>
+
+
+<div class="card">
+
+    <h2>
+        Emergency Assistance
+    </h2>
+
+    <p>
+        Press SOS if you need emergency
+        assistance.
+    </p>
+
+
+    <button
+        class="sos-circle"
+        id="sosButton"
+        onclick="startSOS()"
+    >
+        SOS
+    </button>
+
+
+    <div
+        class="status"
+        id="status"
+    >
+        Ready
+    </div>
+
+
+    <div
+        class="location-box"
+        id="locationBox"
+    >
+
+        <strong>
+            📍 Current Location
+        </strong>
+
+        <div id="coordinates"></div>
+
+
+        <a
+            id="mapButton"
+            class="action share"
+            target="_blank"
+            rel="noopener"
+        >
+            📍 Open My Location
+        </a>
+
+
+        <button
+            class="action share"
+            onclick="shareSOS()"
+        >
+            📤 Share SOS & Location
+        </button>
+
+
+        <a
+            id="policeButton"
+            class="action police"
+            target="_blank"
+            rel="noopener"
+        >
+            🚔 Find Nearby Police
+        </a>
+
+
+        <a
+            id="hospitalButton"
+            class="action hospital"
+            target="_blank"
+            rel="noopener"
+        >
+            🏥 Find Nearby Hospitals
+        </a>
+
+
+        <a
+            href="tel:112"
+            class="action call"
+        >
+            📞 Call Emergency 112
+        </a>
+
+    </div>
+
+
+    <p class="warning">
+
+        If you are in immediate danger,
+        contact the appropriate emergency
+        service directly.
+
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <h2>
+        Emergency Contacts
+    </h2>
+
+    <p>
+        Save trusted contacts for quick access
+        during an SOS.
+    </p>
+
+
+    <input
+        id="contactName"
+        class="form-control"
+        placeholder="Contact Name"
+    >
+
+
+    <input
+        id="phoneNumber"
+        class="form-control"
+        type="tel"
+        placeholder="Phone Number"
+    >
+
+
+    <input
+        id="relationship"
+        class="form-control"
+        placeholder="Relationship e.g. Mother"
+    >
+
+
+    <button
+        class="action save-contact"
+        onclick="saveContact()"
+    >
+        Save Emergency Contact
+    </button>
+
+
+    <div id="contactMessage"></div>
+
+
+    <div id="contactList"></div>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+let currentLatitude = null;
+let currentLongitude = null;
+
+let currentSOSMessage = "";
+let currentMapLink = "";
+
+
+// ============================================================
+// START SOS
+// ============================================================
+
+function startSOS() {
+
+    const status =
+        document.getElementById("status");
+
+    if (!navigator.geolocation) {
+
+        status.textContent =
+            "Location is not supported by this browser.";
+
+        return;
+    }
+
+
+    status.textContent =
+        "Getting your current location...";
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            currentLatitude =
+                position.coords.latitude;
+
+            currentLongitude =
+                position.coords.longitude;
+
+            status.textContent =
+                "Location found. Creating SOS alert...";
+
+            createSOSAlert();
+        },
+
+
+        function(error) {
+
+            console.error(error);
+
+            if (error.code === 1) {
+
+                status.textContent =
+                    "Location permission was denied.";
+
+            }
+            else if (error.code === 2) {
+
+                status.textContent =
+                    "Your location is unavailable.";
+
+            }
+            else {
+
+                status.textContent =
+                    "Unable to get current location.";
+
+            }
+
+        },
+
+
+        {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        }
+
+    );
+
+}
+
+
+// ============================================================
+// CREATE SOS ALERT
+// ============================================================
+
+async function createSOSAlert() {
+
+    const status =
+        document.getElementById("status");
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/sos",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        latitude:
+                            currentLatitude,
+
+                        longitude:
+                            currentLongitude
+
+                    })
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok || !data.success) {
+
+            throw new Error(
+                data.message ||
+                "SOS could not be created."
+            );
+        }
+
+
+        currentSOSMessage =
+            data.alert_message;
+
+        currentMapLink =
+            data.map_link;
+
+
+        document.getElementById(
+            "coordinates"
+        ).textContent =
+            currentLatitude.toFixed(6)
+            +
+            ", "
+            +
+            currentLongitude.toFixed(6);
+
+
+        document.getElementById(
+            "mapButton"
+        ).href =
+            currentMapLink;
+
+
+        document.getElementById(
+            "policeButton"
+        ).href =
+            "https://www.google.com/maps/search/"
+            +
+            "?api=1&query=police+station"
+            +
+            "&center="
+            +
+            currentLatitude
+            +
+            ","
+            +
+            currentLongitude;
+
+
+        document.getElementById(
+            "hospitalButton"
+        ).href =
+            "https://www.google.com/maps/search/"
+            +
+            "?api=1&query=hospital"
+            +
+            "&center="
+            +
+            currentLatitude
+            +
+            ","
+            +
+            currentLongitude;
+
+
+        document.getElementById(
+            "locationBox"
+        ).style.display =
+            "block";
+
+
+        status.textContent =
+            "SOS alert created successfully.";
+
+    }
+    catch(error) {
+
+        console.error(error);
+
+        status.textContent =
+            error.message;
+
+    }
+
+}
+
+
+// ============================================================
+// SHARE SOS
+// ============================================================
+
+async function shareSOS() {
+
+    if (!currentSOSMessage) {
+
+        alert(
+            "Press the SOS button first."
+        );
+
+        return;
+    }
+
+
+    if (navigator.share) {
+
+        try {
+
+            await navigator.share({
+
+                title:
+                    "Emergency SOS",
+
+                text:
+                    currentSOSMessage
+
+            });
+
+        }
+        catch(error) {
+
+            console.log(
+                "Share cancelled:",
+                error
+            );
+
+        }
+
+    }
+    else {
+
+        try {
+
+            await navigator.clipboard.writeText(
+                currentSOSMessage
+            );
+
+            alert(
+                "SOS message copied. Send it to your emergency contact."
+            );
+
+        }
+        catch(error) {
+
+            alert(
+                currentSOSMessage
+            );
+
+        }
+
+    }
+
+}
+
+
+// ============================================================
+// SAVE CONTACT
+// ============================================================
+
+async function saveContact() {
+
+    const contactName =
+        document.getElementById(
+            "contactName"
+        ).value.trim();
+
+
+    const phoneNumber =
+        document.getElementById(
+            "phoneNumber"
+        ).value.trim();
+
+
+    const relationship =
+        document.getElementById(
+            "relationship"
+        ).value.trim();
+
+
+    const message =
+        document.getElementById(
+            "contactMessage"
+        );
+
+
+    if (!contactName || !phoneNumber) {
+
+        message.textContent =
+            "Enter contact name and phone number.";
+
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/emergency-contacts",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        contact_name:
+                            contactName,
+
+                        phone_number:
+                            phoneNumber,
+
+                        relationship:
+                            relationship
+
+                    })
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok || !data.success) {
+
+            throw new Error(
+                data.message
+            );
+        }
+
+
+        message.textContent =
+            "Emergency contact saved.";
+
+
+        document.getElementById(
+            "contactName"
+        ).value = "";
+
+
+        document.getElementById(
+            "phoneNumber"
+        ).value = "";
+
+
+        document.getElementById(
+            "relationship"
+        ).value = "";
+
+
+        loadContacts();
+
+    }
+    catch(error) {
+
+        message.textContent =
+            error.message;
+
+    }
+
+}
+
+
+// ============================================================
+// LOAD CONTACTS
+// ============================================================
+
+async function loadContacts() {
+
+    const list =
+        document.getElementById(
+            "contactList"
+        );
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/emergency-contacts"
+            );
+
+
+        const data =
+            await response.json();
+
+
+        list.innerHTML = "";
+
+
+        if (
+            !data.contacts ||
+            data.contacts.length === 0
+        ) {
+
+            list.innerHTML =
+                "<p>No emergency contacts saved.</p>";
+
+            return;
+        }
+
+
+        data.contacts.forEach(
+            contact => {
+
+                const div =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                div.className =
+                    "contact";
+
+
+                const info =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                const name =
+                    document.createElement(
+                        "strong"
+                    );
+
+
+                name.textContent =
+                    contact.contact_name;
+
+
+                const details =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                details.textContent =
+                    contact.phone_number
+                    +
+                    (
+                        contact.relationship
+                        ?
+                        " • "
+                        +
+                        contact.relationship
+                        :
+                        ""
+                    );
+
+
+                info.appendChild(name);
+
+                info.appendChild(details);
+
+
+                const button =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                button.className =
+                    "delete-btn";
+
+
+                button.textContent =
+                    "Delete";
+
+
+                button.onclick =
+                    function() {
+
+                        deleteContact(
+                            contact.contact_id
+                        );
+
+                    };
+
+
+                div.appendChild(info);
+
+                div.appendChild(button);
+
+                list.appendChild(div);
+
+            }
+        );
+
+    }
+    catch(error) {
+
+        console.error(error);
+
+        list.innerHTML =
+            "<p>Unable to load contacts.</p>";
+
+    }
+
+}
+
+
+// ============================================================
+// DELETE CONTACT
+// ============================================================
+
+async function deleteContact(contactId) {
+
+    const confirmed =
+        confirm(
+            "Delete this emergency contact?"
+        );
+
+
+    if (!confirmed) {
+
+        return;
+
+    }
+
+
+    await fetch(
+        "/api/emergency-contacts/"
+        +
+        contactId,
+        {
+            method: "DELETE"
+        }
+    );
+
+
+    loadContacts();
+
+}
+
+
+// ============================================================
+// PAGE START
+// ============================================================
+
+loadContacts();
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,301 @@
+ObservationID,Area,Latitude,Longitude,Date,Time,TimePeriod,TotalIncidents,HarassmentCases,StalkingCases,TheftCases,OtherCases,StreetLighting,CrowdLevel,PublicTransport,PoliceStationDistanceKM,SurveyUnsafePercent,RiskScore,RiskLevel
+1,Andheri East,19.1136,72.8697,2026-01-05,19:00,Evening,8,2,2,0,4,Good,Medium,Good,0.9,24,29.1,Low
+2,Andheri East,19.1136,72.8697,2026-01-18,08:00,Day,3,1,0,0,2,Good,Medium,Good,1.6,20,16.0,Low
+3,Andheri East,19.1136,72.8697,2026-01-31,10:00,Day,7,1,0,3,3,Good,Low,Average,1.9,19,32.0,Low
+4,Andheri East,19.1136,72.8697,2026-02-13,20:00,Night,9,4,0,3,2,Average,Medium,Average,1.5,28,50.3,Medium
+5,Andheri East,19.1136,72.8697,2026-02-26,23:00,Night,10,3,0,7,0,Poor,Medium,Good,1.8,31,56.8,Medium
+6,Andheri East,19.1136,72.8697,2026-03-11,20:00,Night,8,4,1,3,0,Poor,Medium,Average,2.9,32,59.7,Medium
+7,Andheri East,19.1136,72.8697,2026-03-24,15:00,Day,5,2,1,1,1,Poor,Medium,Average,2.1,18,38.1,Low
+8,Andheri East,19.1136,72.8697,2026-04-06,19:00,Evening,7,1,0,3,3,Average,Medium,Average,2.3,42,44.6,Low
+9,Andheri East,19.1136,72.8697,2026-04-19,23:00,Night,7,3,1,3,0,Average,Low,Average,1.9,31,54.6,Medium
+10,Andheri East,19.1136,72.8697,2026-05-02,18:00,Evening,9,3,0,4,2,Average,High,Good,2.5,33,36.8,Low
+11,Andheri West,19.1364,72.8296,2026-01-12,21:00,Night,18,4,0,0,14,Average,Medium,Poor,4.6,70,81.9,High
+12,Andheri West,19.1364,72.8296,2026-01-25,19:00,Evening,13,4,3,5,1,Poor,Medium,Average,2.3,65,66.4,Medium
+13,Andheri West,19.1364,72.8296,2026-02-07,08:00,Day,10,5,1,0,4,Average,Medium,Average,3.8,55,47.9,Medium
+14,Andheri West,19.1364,72.8296,2026-02-20,18:00,Evening,11,5,0,3,3,Poor,Medium,Poor,2.8,71,70.5,High
+15,Andheri West,19.1364,72.8296,2026-03-05,10:00,Day,12,2,0,0,10,Good,Medium,Good,3.0,53,38.3,Low
+16,Andheri West,19.1364,72.8296,2026-03-18,22:00,Night,16,4,4,5,3,Average,Low,Average,3.7,55,75.5,High
+17,Andheri West,19.1364,72.8296,2026-03-31,21:00,Night,14,6,0,4,4,Poor,Medium,Poor,3.0,59,79.5,High
+18,Andheri West,19.1364,72.8296,2026-04-13,20:00,Night,22,8,2,4,8,Average,Medium,Good,2.6,53,72.2,High
+19,Andheri West,19.1364,72.8296,2026-04-26,10:00,Day,12,5,0,0,7,Poor,Medium,Average,3.0,47,55.9,Medium
+20,Andheri West,19.1364,72.8296,2026-05-09,18:00,Evening,18,3,5,9,1,Average,Medium,Average,2.7,62,65.5,Medium
+21,Bandra East,19.0607,72.8464,2026-01-19,22:00,Night,22,8,4,2,8,Average,Low,Average,5.2,79,91.6,High
+22,Bandra East,19.0607,72.8464,2026-02-01,17:00,Evening,22,8,0,9,5,Average,Medium,Poor,5.1,87,85.2,High
+23,Bandra East,19.0607,72.8464,2026-02-14,21:00,Night,22,10,4,3,5,Poor,Low,Average,6.2,90,100,High
+24,Bandra East,19.0607,72.8464,2026-02-27,23:00,Night,27,12,5,3,7,Average,Medium,Good,5.7,91,92.2,High
+25,Bandra East,19.0607,72.8464,2026-03-12,10:00,Day,15,5,2,1,7,Poor,Low,Poor,3.7,72,77.8,High
+26,Bandra East,19.0607,72.8464,2026-03-25,18:00,Evening,23,9,3,2,9,Average,Low,Average,3.2,69,81.0,High
+27,Bandra East,19.0607,72.8464,2026-04-07,13:00,Day,25,9,0,8,8,Average,Medium,Average,4.0,86,76.8,High
+28,Bandra East,19.0607,72.8464,2026-04-20,15:00,Day,16,6,0,2,8,Average,Medium,Poor,4.7,87,69.9,Medium
+29,Bandra East,19.0607,72.8464,2026-05-03,21:00,Night,30,6,1,1,22,Average,Medium,Average,4.3,76,95.2,High
+30,Bandra East,19.0607,72.8464,2026-05-16,18:00,Evening,21,5,4,7,5,Poor,Low,Good,5.4,71,85.6,High
+31,Bandra West,19.0596,72.8295,2026-01-26,13:00,Day,6,1,1,0,4,Good,High,Average,1.9,22,20.2,Low
+32,Bandra West,19.0596,72.8295,2026-02-08,21:00,Night,8,3,1,2,2,Average,Medium,Average,2.7,51,55.6,Medium
+33,Bandra West,19.0596,72.8295,2026-02-21,18:00,Evening,8,4,1,0,3,Average,High,Good,1.6,36,34.8,Low
+34,Bandra West,19.0596,72.8295,2026-03-06,20:00,Night,6,2,1,0,3,Average,Medium,Good,2.7,35,45.2,Medium
+35,Bandra West,19.0596,72.8295,2026-03-19,18:00,Evening,7,3,1,0,3,Average,High,Average,0.9,34,35.9,Low
+36,Bandra West,19.0596,72.8295,2026-04-01,13:00,Day,7,2,0,2,3,Poor,High,Good,1.5,27,33.2,Low
+37,Bandra West,19.0596,72.8295,2026-04-14,20:00,Night,10,5,0,3,2,Average,Medium,Good,2.6,46,53.3,Medium
+38,Bandra West,19.0596,72.8295,2026-04-27,15:00,Day,2,1,0,1,0,Good,Medium,Average,1.6,28,20.3,Low
+39,Bandra West,19.0596,72.8295,2026-05-10,23:00,Night,9,4,0,5,0,Average,Medium,Average,2.3,28,51.4,Medium
+40,Bandra West,19.0596,72.8295,2026-05-23,19:00,Evening,9,3,2,3,1,Average,Medium,Good,0.9,31,39.1,Low
+41,Borivali East,19.2307,72.8567,2026-02-02,23:00,Night,14,3,2,6,3,Average,Low,Good,4.1,57,69.6,Medium
+42,Borivali East,19.2307,72.8567,2026-02-15,19:00,Evening,13,4,0,2,7,Average,High,Good,2.5,66,49.9,Medium
+43,Borivali East,19.2307,72.8567,2026-02-28,23:00,Night,16,7,2,4,3,Average,Low,Good,3.5,71,74.7,High
+44,Borivali East,19.2307,72.8567,2026-03-13,22:00,Night,14,5,0,6,3,Poor,Low,Average,2.5,51,78.0,High
+45,Borivali East,19.2307,72.8567,2026-03-26,18:00,Evening,14,5,2,3,4,Poor,Low,Good,3.9,59,70.7,High
+46,Borivali East,19.2307,72.8567,2026-04-08,08:00,Day,13,6,2,3,2,Average,Low,Average,3.1,57,57.7,Medium
+47,Borivali East,19.2307,72.8567,2026-04-21,13:00,Day,13,4,0,2,7,Average,High,Average,2.7,44,43.3,Low
+48,Borivali East,19.2307,72.8567,2026-05-04,08:00,Day,12,6,0,0,6,Good,Medium,Average,3.1,46,40.9,Low
+49,Borivali East,19.2307,72.8567,2026-05-17,21:00,Night,17,8,2,7,0,Average,Medium,Good,3.2,62,67.8,Medium
+50,Borivali East,19.2307,72.8567,2026-05-30,19:00,Evening,16,8,0,3,5,Poor,Low,Average,2.1,51,73.4,High
+51,Borivali West,19.2403,72.8484,2026-02-09,20:00,Night,22,10,2,2,8,Poor,Medium,Poor,5.2,80,98.8,High
+52,Borivali West,19.2403,72.8484,2026-02-22,19:00,Evening,22,4,4,0,14,Poor,Low,Average,3.9,89,92.9,High
+53,Borivali West,19.2403,72.8484,2026-03-07,15:00,Day,21,5,0,16,0,Average,Low,Average,5.3,65,74.2,High
+54,Borivali West,19.2403,72.8484,2026-03-20,13:00,Day,19,8,1,7,3,Average,Low,Average,3.2,68,69.0,Medium
+55,Borivali West,19.2403,72.8484,2026-04-02,20:00,Night,23,4,4,10,5,Poor,Medium,Average,6.3,72,95.0,High
+56,Borivali West,19.2403,72.8484,2026-04-15,21:00,Night,27,12,0,6,9,Poor,Low,Good,5.9,97,100,High
+57,Borivali West,19.2403,72.8484,2026-04-28,08:00,Day,22,5,2,7,8,Poor,Low,Good,5.1,76,81.8,High
+58,Borivali West,19.2403,72.8484,2026-05-11,20:00,Night,26,9,5,9,3,Poor,Low,Poor,3.6,98,100,High
+59,Borivali West,19.2403,72.8484,2026-05-24,19:00,Evening,22,8,2,2,10,Poor,Low,Poor,3.3,78,94.7,High
+60,Borivali West,19.2403,72.8484,2026-06-06,17:00,Evening,18,9,3,1,5,Poor,Medium,Poor,4.6,81,85.4,High
+61,Chembur,19.0522,72.9005,2026-02-16,18:00,Evening,9,1,0,7,1,Average,Low,Average,0.8,26,47.9,Medium
+62,Chembur,19.0522,72.9005,2026-03-01,21:00,Night,12,2,2,4,4,Average,Medium,Good,2.4,32,52.8,Medium
+63,Chembur,19.0522,72.9005,2026-03-14,18:00,Evening,4,0,0,2,2,Average,High,Good,0.9,36,28.0,Low
+64,Chembur,19.0522,72.9005,2026-03-27,08:00,Day,5,1,1,0,3,Good,High,Average,1.4,19,17.4,Low
+65,Chembur,19.0522,72.9005,2026-04-09,15:00,Day,5,1,1,3,0,Average,High,Good,1.3,37,24.2,Low
+66,Chembur,19.0522,72.9005,2026-04-22,20:00,Night,13,4,1,4,4,Poor,Medium,Average,1.9,34,66.0,Medium
+67,Chembur,19.0522,72.9005,2026-05-05,18:00,Evening,4,0,1,2,1,Average,Medium,Average,1.6,38,38.4,Low
+68,Chembur,19.0522,72.9005,2026-05-18,23:00,Night,8,4,1,3,0,Average,Medium,Average,2.6,47,54.6,Medium
+69,Chembur,19.0522,72.9005,2026-05-31,23:00,Night,11,3,0,1,7,Poor,Medium,Average,1.5,54,66.9,Medium
+70,Chembur,19.0522,72.9005,2026-06-13,10:00,Day,4,1,1,2,0,Good,High,Average,1.4,30,18.4,Low
+71,Dadar East,19.018,72.8478,2026-02-23,13:00,Day,16,3,3,8,2,Good,Medium,Good,2.6,54,43.7,Low
+72,Dadar East,19.018,72.8478,2026-03-08,21:00,Night,12,6,0,3,3,Poor,Medium,Good,2.6,71,69.7,Medium
+73,Dadar East,19.018,72.8478,2026-03-21,23:00,Night,15,7,1,4,3,Poor,Low,Good,4.2,48,77.2,High
+74,Dadar East,19.018,72.8478,2026-04-03,23:00,Night,18,9,2,7,0,Poor,Medium,Average,4.2,71,84.6,High
+75,Dadar East,19.018,72.8478,2026-04-16,08:00,Day,13,5,1,5,2,Average,Medium,Average,2.3,44,47.7,Medium
+76,Dadar East,19.018,72.8478,2026-04-29,20:00,Night,15,5,2,8,0,Average,Medium,Average,3.4,62,69.2,Medium
+77,Dadar East,19.018,72.8478,2026-05-12,19:00,Evening,15,4,3,2,6,Average,Medium,Poor,3.4,46,63.6,Medium
+78,Dadar East,19.018,72.8478,2026-05-25,10:00,Day,14,3,0,10,1,Average,Medium,Average,2.7,52,51.5,Medium
+79,Dadar East,19.018,72.8478,2026-06-07,19:00,Evening,17,4,3,2,8,Average,Medium,Average,4.0,48,62.8,Medium
+80,Dadar East,19.018,72.8478,2026-06-20,18:00,Evening,13,4,3,2,4,Average,Medium,Average,3.8,50,57.2,Medium
+81,Dadar West,19.0213,72.8424,2026-03-02,18:00,Evening,21,8,0,1,12,Average,Low,Average,4.9,94,86.0,High
+82,Dadar West,19.0213,72.8424,2026-03-15,20:00,Night,23,6,5,12,0,Poor,Low,Poor,6.4,85,100,High
+83,Dadar West,19.0213,72.8424,2026-03-28,15:00,Day,16,3,4,6,3,Average,Low,Poor,5.6,77,75.0,High
+84,Dadar West,19.0213,72.8424,2026-04-10,08:00,Day,15,7,2,4,2,Average,Medium,Average,3.0,82,60.0,Medium
+85,Dadar West,19.0213,72.8424,2026-04-23,18:00,Evening,25,5,3,9,8,Average,Low,Average,3.8,91,89.6,High
+86,Dadar West,19.0213,72.8424,2026-05-06,17:00,Evening,25,7,1,11,6,Average,Low,Poor,5.4,75,93.3,High
+87,Dadar West,19.0213,72.8424,2026-05-19,10:00,Day,24,7,5,9,3,Average,Low,Average,4.2,86,81.6,High
+88,Dadar West,19.0213,72.8424,2026-06-01,23:00,Night,24,9,1,14,0,Poor,Low,Poor,6.4,95,100,High
+89,Dadar West,19.0213,72.8424,2026-06-14,20:00,Night,21,7,3,3,8,Average,Low,Poor,4.4,96,97.7,High
+90,Dadar West,19.0213,72.8424,2026-06-27,22:00,Night,23,10,3,2,8,Poor,Low,Poor,5.4,80,100,High
+91,Ghatkopar East,19.079,72.908,2026-03-09,22:00,Night,11,2,0,1,8,Average,Low,Average,2.8,40,63.7,Medium
+92,Ghatkopar East,19.079,72.908,2026-03-22,17:00,Evening,9,1,2,6,0,Good,High,Good,2.3,22,27.1,Low
+93,Ghatkopar East,19.079,72.908,2026-04-04,19:00,Evening,3,1,0,2,0,Poor,High,Poor,2.1,32,44.3,Low
+94,Ghatkopar East,19.079,72.908,2026-04-17,21:00,Night,9,1,2,2,4,Poor,Low,Average,2.9,51,71.3,High
+95,Ghatkopar East,19.079,72.908,2026-04-30,15:00,Day,3,1,0,2,0,Good,High,Good,1.3,29,12.6,Low
+96,Ghatkopar East,19.079,72.908,2026-05-13,23:00,Night,10,3,2,4,1,Average,Medium,Average,2.0,25,51.8,Medium
+97,Ghatkopar East,19.079,72.908,2026-05-26,10:00,Day,2,0,0,1,1,Good,High,Good,1.3,41,13.7,Low
+98,Ghatkopar East,19.079,72.908,2026-06-08,08:00,Day,2,0,0,1,1,Good,Low,Average,1.7,22,25.1,Low
+99,Ghatkopar East,19.079,72.908,2026-06-21,20:00,Night,7,2,0,5,0,Average,Medium,Good,2.3,45,48.3,Medium
+100,Ghatkopar East,19.079,72.908,2026-07-04,17:00,Evening,10,4,2,4,0,Good,Medium,Average,2.3,49,43.5,Low
+101,Ghatkopar West,19.086,72.889,2026-03-16,17:00,Evening,15,6,3,6,0,Average,Low,Average,2.2,61,66.2,Medium
+102,Ghatkopar West,19.086,72.889,2026-03-29,23:00,Night,20,5,1,5,9,Poor,Medium,Average,2.5,74,85.8,High
+103,Ghatkopar West,19.086,72.889,2026-04-11,18:00,Evening,15,4,0,11,0,Average,High,Average,2.3,63,55.8,Medium
+104,Ghatkopar West,19.086,72.889,2026-04-24,08:00,Day,15,7,0,0,8,Average,Medium,Average,2.9,62,55.5,Medium
+105,Ghatkopar West,19.086,72.889,2026-05-07,19:00,Evening,14,4,0,1,9,Average,Low,Average,3.3,46,63.0,Medium
+106,Ghatkopar West,19.086,72.889,2026-05-20,21:00,Night,17,4,2,5,6,Average,Medium,Poor,4.0,67,79.0,High
+107,Ghatkopar West,19.086,72.889,2026-06-02,13:00,Day,10,5,0,2,3,Average,Medium,Average,3.0,53,46.4,Medium
+108,Ghatkopar West,19.086,72.889,2026-06-15,20:00,Night,18,3,2,8,5,Average,Medium,Average,4.2,75,77.5,High
+109,Ghatkopar West,19.086,72.889,2026-06-28,23:00,Night,17,7,2,4,4,Poor,Medium,Good,3.3,53,73.9,High
+110,Ghatkopar West,19.086,72.889,2026-07-11,08:00,Day,15,4,1,0,10,Average,High,Average,4.0,68,53.3,Medium
+111,Goregaon East,19.1663,72.8526,2026-03-23,19:00,Evening,17,8,1,8,0,Poor,Medium,Poor,5.1,81,84.6,High
+112,Goregaon East,19.1663,72.8526,2026-04-05,15:00,Day,16,3,1,11,1,Average,Medium,Poor,4.2,83,68.3,Medium
+113,Goregaon East,19.1663,72.8526,2026-04-18,22:00,Night,26,9,3,14,0,Average,Low,Poor,5.0,89,100,High
+114,Goregaon East,19.1663,72.8526,2026-05-01,17:00,Evening,26,9,5,5,7,Poor,Low,Poor,3.3,90,100,High
+115,Goregaon East,19.1663,72.8526,2026-05-14,20:00,Night,27,10,3,14,0,Average,Low,Average,6.2,98,100,High
+116,Goregaon East,19.1663,72.8526,2026-05-27,10:00,Day,23,5,0,15,3,Average,Medium,Poor,3.6,82,77.4,High
+117,Goregaon East,19.1663,72.8526,2026-06-09,17:00,Evening,20,10,2,7,1,Poor,Medium,Poor,3.8,90,89.1,High
+118,Goregaon East,19.1663,72.8526,2026-06-22,15:00,Day,17,3,0,8,6,Poor,Low,Average,5.8,81,80.6,High
+119,Goregaon East,19.1663,72.8526,2026-07-05,20:00,Night,22,6,5,11,0,Poor,Low,Good,3.6,98,97.5,High
+120,Goregaon East,19.1663,72.8526,2026-07-18,22:00,Night,28,7,2,3,16,Poor,Medium,Poor,5.4,93,100,High
+121,Goregaon West,19.1646,72.8493,2026-03-30,19:00,Evening,10,2,2,1,5,Good,High,Good,1.0,40,30.7,Low
+122,Goregaon West,19.1646,72.8493,2026-04-12,10:00,Day,6,1,1,1,3,Good,Medium,Average,1.6,39,28.5,Low
+123,Goregaon West,19.1646,72.8493,2026-04-25,20:00,Night,7,3,0,3,1,Average,Medium,Good,1.3,32,44.0,Low
+124,Goregaon West,19.1646,72.8493,2026-05-08,23:00,Night,7,3,0,0,4,Poor,Medium,Good,1.2,31,51.6,Medium
+125,Goregaon West,19.1646,72.8493,2026-05-21,23:00,Night,9,4,1,2,2,Average,Medium,Good,2.2,35,48.8,Medium
+126,Goregaon West,19.1646,72.8493,2026-06-03,23:00,Night,6,3,1,0,2,Average,Medium,Good,1.9,54,48.2,Medium
+127,Goregaon West,19.1646,72.8493,2026-06-16,18:00,Evening,9,4,1,1,3,Average,Low,Good,2.5,42,49.8,Medium
+128,Goregaon West,19.1646,72.8493,2026-06-29,19:00,Evening,7,1,2,1,3,Average,Medium,Good,2.4,35,39.2,Low
+129,Goregaon West,19.1646,72.8493,2026-07-12,08:00,Day,6,2,1,2,1,Good,High,Good,2.1,38,20.0,Low
+130,Goregaon West,19.1646,72.8493,2026-07-25,15:00,Day,8,2,0,0,6,Average,High,Good,1.7,21,25.6,Low
+131,Jogeshwari East,19.1362,72.8646,2026-04-06,17:00,Evening,16,6,0,6,4,Average,Medium,Average,2.7,68,63.9,Medium
+132,Jogeshwari East,19.1362,72.8646,2026-04-19,20:00,Night,15,4,1,6,4,Poor,Low,Poor,3.8,61,88.5,High
+133,Jogeshwari East,19.1362,72.8646,2026-05-02,21:00,Night,18,6,1,9,2,Poor,Low,Good,3.0,67,84.0,High
+134,Jogeshwari East,19.1362,72.8646,2026-05-15,20:00,Night,22,6,1,12,3,Average,Low,Average,3.2,65,85.7,High
+135,Jogeshwari East,19.1362,72.8646,2026-05-28,10:00,Day,8,4,0,2,2,Average,High,Good,2.6,39,30.8,Low
+136,Jogeshwari East,19.1362,72.8646,2026-06-10,08:00,Day,8,1,0,3,4,Average,Medium,Average,2.0,54,42.3,Low
+137,Jogeshwari East,19.1362,72.8646,2026-06-23,10:00,Day,13,2,2,2,7,Good,Low,Poor,2.7,38,51.0,Medium
+138,Jogeshwari East,19.1362,72.8646,2026-07-06,20:00,Night,18,7,1,6,4,Poor,Low,Poor,4.0,48,90.3,High
+139,Jogeshwari East,19.1362,72.8646,2026-07-19,19:00,Evening,16,5,3,4,4,Average,Medium,Average,3.3,46,59.9,Medium
+140,Jogeshwari East,19.1362,72.8646,2026-08-01,18:00,Evening,18,4,3,8,3,Average,Medium,Average,2.2,45,61.1,Medium
+141,Kandivali East,19.2058,72.8641,2026-04-13,18:00,Evening,26,9,1,7,9,Poor,Low,Poor,3.2,95,100,High
+142,Kandivali East,19.2058,72.8641,2026-04-26,13:00,Day,17,5,3,0,9,Poor,Low,Poor,5.4,80,84.8,High
+143,Kandivali East,19.2058,72.8641,2026-05-09,21:00,Night,27,9,2,3,13,Poor,Low,Poor,5.7,95,100,High
+144,Kandivali East,19.2058,72.8641,2026-05-22,23:00,Night,23,7,0,3,13,Average,Low,Poor,5.8,94,100,High
+145,Kandivali East,19.2058,72.8641,2026-06-04,17:00,Evening,22,7,2,13,0,Average,Low,Average,3.1,71,79.9,High
+146,Kandivali East,19.2058,72.8641,2026-06-17,20:00,Night,30,13,0,10,7,Poor,Low,Poor,3.8,98,100,High
+147,Kandivali East,19.2058,72.8641,2026-06-30,19:00,Evening,26,8,2,16,0,Poor,Low,Average,3.8,92,99.3,High
+148,Kandivali East,19.2058,72.8641,2026-07-13,10:00,Day,17,5,2,1,9,Poor,Low,Poor,3.6,66,79.2,High
+149,Kandivali East,19.2058,72.8641,2026-07-26,10:00,Day,17,4,0,6,7,Poor,Medium,Poor,3.6,84,77.2,High
+150,Kandivali East,19.2058,72.8641,2026-08-08,22:00,Night,22,7,4,7,4,Poor,Low,Poor,4.0,92,100,High
+151,Kandivali West,19.2084,72.8422,2026-04-20,10:00,Day,8,2,2,1,3,Poor,Low,Good,0.9,26,44.6,Low
+152,Kandivali West,19.2084,72.8422,2026-05-03,20:00,Night,8,2,2,1,3,Poor,Low,Good,2.1,46,63.7,Medium
+153,Kandivali West,19.2084,72.8422,2026-05-16,17:00,Evening,3,0,1,1,1,Average,Low,Good,1.6,32,37.6,Low
+154,Kandivali West,19.2084,72.8422,2026-05-29,18:00,Evening,11,4,1,0,6,Average,Medium,Average,2.0,27,46.7,Medium
+155,Kandivali West,19.2084,72.8422,2026-06-11,22:00,Night,6,2,0,4,0,Average,Low,Average,1.8,37,54.4,Medium
+156,Kandivali West,19.2084,72.8422,2026-06-24,21:00,Night,10,2,1,4,3,Average,Low,Good,1.3,45,57.2,Medium
+157,Kandivali West,19.2084,72.8422,2026-07-07,08:00,Day,3,0,0,2,1,Good,Medium,Average,1.1,25,20.4,Low
+158,Kandivali West,19.2084,72.8422,2026-07-20,22:00,Night,14,3,1,4,6,Average,Medium,Good,1.4,40,56.1,Medium
+159,Kandivali West,19.2084,72.8422,2026-08-02,15:00,Day,8,2,2,1,3,Good,Medium,Average,1.6,21,27.5,Low
+160,Kandivali West,19.2084,72.8422,2026-08-15,19:00,Evening,7,1,2,0,4,Good,High,Good,2.4,30,26.1,Low
+161,Kurla,19.0726,72.8845,2026-04-27,20:00,Night,21,5,4,11,1,Poor,Medium,Average,3.5,67,87.1,High
+162,Kurla,19.0726,72.8845,2026-05-10,13:00,Day,8,1,0,2,5,Poor,Medium,Good,3.0,40,44.6,Low
+163,Kurla,19.0726,72.8845,2026-05-23,17:00,Evening,15,7,0,4,4,Average,Medium,Average,1.8,53,57.9,Medium
+164,Kurla,19.0726,72.8845,2026-06-05,20:00,Night,15,3,3,3,6,Poor,Low,Average,4.2,64,84.7,High
+165,Kurla,19.0726,72.8845,2026-06-18,20:00,Night,12,5,0,7,0,Poor,Medium,Average,3.6,56,71.8,High
+166,Kurla,19.0726,72.8845,2026-07-01,08:00,Day,13,6,2,1,4,Average,Medium,Average,2.4,58,51.0,Medium
+167,Kurla,19.0726,72.8845,2026-07-14,21:00,Night,14,5,3,2,4,Poor,Medium,Good,3.3,47,68.3,Medium
+168,Kurla,19.0726,72.8845,2026-07-27,18:00,Evening,18,8,0,5,5,Average,Medium,Poor,1.9,49,66.5,Medium
+169,Kurla,19.0726,72.8845,2026-08-09,15:00,Day,15,7,1,5,2,Good,High,Poor,3.2,67,50.0,Medium
+170,Kurla,19.0726,72.8845,2026-08-22,18:00,Evening,16,3,4,7,2,Average,High,Good,3.3,57,53.4,Medium
+171,Malad East,19.1802,72.8554,2026-05-04,23:00,Night,25,12,2,6,5,Poor,Medium,Average,5.1,85,99.1,High
+172,Malad East,19.1802,72.8554,2026-05-17,08:00,Day,22,6,5,9,2,Poor,Low,Poor,4.8,82,91.7,High
+173,Malad East,19.1802,72.8554,2026-05-30,21:00,Night,29,6,7,1,15,Poor,Low,Poor,5.6,90,100,High
+174,Malad East,19.1802,72.8554,2026-06-12,08:00,Day,23,11,1,6,5,Good,Medium,Poor,3.8,90,72.5,High
+175,Malad East,19.1802,72.8554,2026-06-25,18:00,Evening,24,8,3,4,9,Average,Medium,Poor,4.1,73,83.6,High
+176,Malad East,19.1802,72.8554,2026-07-08,17:00,Evening,21,9,2,8,2,Poor,Low,Poor,4.2,78,94.5,High
+177,Malad East,19.1802,72.8554,2026-07-21,17:00,Evening,25,11,1,6,7,Poor,Low,Poor,3.8,89,100,High
+178,Malad East,19.1802,72.8554,2026-08-03,21:00,Night,25,12,4,1,8,Poor,Low,Average,5.0,69,100,High
+179,Malad East,19.1802,72.8554,2026-08-16,15:00,Day,21,10,3,5,3,Average,High,Poor,3.4,69,66.4,Medium
+180,Malad East,19.1802,72.8554,2026-08-29,23:00,Night,21,6,3,0,12,Average,Low,Poor,4.4,93,97.1,High
+181,Malad West,19.1874,72.8484,2026-05-11,19:00,Evening,8,1,1,2,4,Good,Low,Average,1.3,41,43.4,Low
+182,Malad West,19.1874,72.8484,2026-05-24,20:00,Night,10,5,1,4,0,Average,Medium,Average,1.9,39,54.7,Medium
+183,Malad West,19.1874,72.8484,2026-06-06,18:00,Evening,8,3,1,1,3,Good,High,Good,1.6,22,24.7,Low
+184,Malad West,19.1874,72.8484,2026-06-19,10:00,Day,2,1,0,1,0,Good,Medium,Good,2.3,32,18.2,Low
+185,Malad West,19.1874,72.8484,2026-07-02,21:00,Night,7,1,0,4,2,Average,Medium,Good,2.7,47,49.3,Medium
+186,Malad West,19.1874,72.8484,2026-07-15,22:00,Night,9,4,1,3,1,Poor,Medium,Average,1.4,53,63.7,Medium
+187,Malad West,19.1874,72.8484,2026-07-28,13:00,Day,6,1,0,5,0,Good,Medium,Good,2.1,29,23.0,Low
+188,Malad West,19.1874,72.8484,2026-08-10,19:00,Evening,3,0,1,0,2,Poor,Medium,Good,1.8,23,37.9,Low
+189,Malad West,19.1874,72.8484,2026-08-23,13:00,Day,4,0,1,3,0,Good,Medium,Good,1.9,33,20.7,Low
+190,Malad West,19.1874,72.8484,2026-09-05,20:00,Night,11,4,1,4,2,Average,Medium,Good,1.5,43,52.5,Medium
+191,Mulund West,19.1726,72.9425,2026-05-18,23:00,Night,16,3,2,4,7,Average,Medium,Average,3.4,69,72.1,High
+192,Mulund West,19.1726,72.9425,2026-05-31,20:00,Night,20,4,5,6,5,Average,Low,Poor,3.4,77,90.7,High
+193,Mulund West,19.1726,72.9425,2026-06-13,17:00,Evening,13,3,0,1,9,Average,Medium,Average,3.9,44,56.0,Medium
+194,Mulund West,19.1726,72.9425,2026-06-26,22:00,Night,20,4,1,6,9,Average,Medium,Average,4.0,76,80.3,High
+195,Mulund West,19.1726,72.9425,2026-07-09,15:00,Day,16,4,3,9,0,Good,Medium,Average,3.0,67,51.1,Medium
+196,Mulund West,19.1726,72.9425,2026-07-22,10:00,Day,13,2,0,8,3,Poor,Medium,Average,2.6,42,55.7,Medium
+197,Mulund West,19.1726,72.9425,2026-08-04,17:00,Evening,13,5,1,7,0,Average,Medium,Average,3.7,72,61.9,Medium
+198,Mulund West,19.1726,72.9425,2026-08-17,17:00,Evening,17,4,1,12,0,Poor,Medium,Average,2.3,47,68.2,Medium
+199,Mulund West,19.1726,72.9425,2026-08-30,21:00,Night,11,3,1,5,2,Average,Medium,Poor,3.0,50,65.2,Medium
+200,Mulund West,19.1726,72.9425,2026-09-12,13:00,Day,15,5,1,8,1,Good,High,Poor,3.2,49,46.0,Medium
+201,Powai,19.1176,72.906,2026-05-25,10:00,Day,16,7,3,1,5,Average,Low,Poor,3.4,65,69.3,Medium
+202,Powai,19.1176,72.906,2026-06-07,18:00,Evening,25,7,3,12,3,Average,Low,Poor,5.1,77,93.3,High
+203,Powai,19.1176,72.906,2026-06-20,17:00,Evening,21,6,1,4,10,Average,Low,Poor,4.7,95,90.9,High
+204,Powai,19.1176,72.906,2026-07-03,10:00,Day,25,8,2,8,7,Poor,Low,Average,3.8,81,89.4,High
+205,Powai,19.1176,72.906,2026-07-16,21:00,Night,27,8,3,10,6,Poor,Low,Average,5.4,74,100,High
+206,Powai,19.1176,72.906,2026-07-29,10:00,Day,18,5,1,10,2,Poor,Low,Poor,4.5,83,85.7,High
+207,Powai,19.1176,72.906,2026-08-11,23:00,Night,22,11,3,7,1,Poor,Low,Poor,6.1,98,100,High
+208,Powai,19.1176,72.906,2026-08-24,21:00,Night,28,6,1,11,10,Poor,Medium,Average,3.8,98,100,High
+209,Powai,19.1176,72.906,2026-09-06,21:00,Night,22,11,1,5,5,Poor,Low,Average,4.4,97,100,High
+210,Powai,19.1176,72.906,2026-09-19,19:00,Evening,24,10,0,3,11,Average,Low,Average,3.9,90,88.1,High
+211,Santacruz East,19.081,72.8498,2026-06-01,17:00,Evening,4,1,0,0,3,Poor,High,Average,1.4,47,43.1,Low
+212,Santacruz East,19.081,72.8498,2026-06-14,18:00,Evening,5,2,0,3,0,Average,High,Good,1.2,41,30.9,Low
+213,Santacruz East,19.081,72.8498,2026-06-27,10:00,Day,5,2,1,1,1,Good,Low,Average,1.4,28,30.4,Low
+214,Santacruz East,19.081,72.8498,2026-07-10,08:00,Day,7,2,1,0,4,Poor,High,Good,1.7,39,36.1,Low
+215,Santacruz East,19.081,72.8498,2026-07-23,23:00,Night,11,4,1,0,6,Average,Low,Good,1.1,31,55.3,Medium
+216,Santacruz East,19.081,72.8498,2026-08-05,21:00,Night,11,5,1,0,5,Average,Low,Average,2.1,47,64.2,Medium
+217,Santacruz East,19.081,72.8498,2026-08-18,15:00,Day,7,1,0,4,2,Good,Medium,Good,1.4,35,24.8,Low
+218,Santacruz East,19.081,72.8498,2026-08-31,22:00,Night,13,2,2,1,8,Average,Medium,Average,1.8,39,58.9,Medium
+219,Santacruz East,19.081,72.8498,2026-09-13,21:00,Night,12,2,2,2,6,Poor,Medium,Good,2.8,37,62.5,Medium
+220,Santacruz East,19.081,72.8498,2026-09-26,18:00,Evening,4,2,0,1,1,Average,Medium,Good,1.9,48,37.0,Low
+221,Santacruz West,19.0849,72.8349,2026-06-08,17:00,Evening,9,4,0,5,0,Average,Medium,Average,3.9,69,55.7,Medium
+222,Santacruz West,19.0849,72.8349,2026-06-21,17:00,Evening,14,3,0,1,10,Average,Medium,Good,2.9,62,56.0,Medium
+223,Santacruz West,19.0849,72.8349,2026-07-04,22:00,Night,15,6,3,6,0,Poor,Low,Average,3.4,78,86.7,High
+224,Santacruz West,19.0849,72.8349,2026-07-17,15:00,Day,8,3,0,2,3,Poor,High,Average,3.8,48,46.5,Medium
+225,Santacruz West,19.0849,72.8349,2026-07-30,22:00,Night,16,8,0,3,5,Poor,Medium,Average,4.4,47,76.7,High
+226,Santacruz West,19.0849,72.8349,2026-08-12,08:00,Day,15,5,1,9,0,Average,Medium,Poor,2.1,62,59.3,Medium
+227,Santacruz West,19.0849,72.8349,2026-08-25,20:00,Night,13,6,1,3,3,Average,Medium,Poor,2.9,66,71.4,High
+228,Santacruz West,19.0849,72.8349,2026-09-07,13:00,Day,15,7,2,1,5,Good,Medium,Average,1.9,57,45.9,Medium
+229,Santacruz West,19.0849,72.8349,2026-09-20,17:00,Evening,10,3,2,1,4,Average,Medium,Poor,2.3,50,55.7,Medium
+230,Santacruz West,19.0849,72.8349,2026-10-03,20:00,Night,21,9,2,2,8,Poor,Medium,Average,4.0,54,84.9,High
+231,Sion,19.0436,72.8633,2026-06-15,23:00,Night,26,8,0,2,16,Average,Medium,Poor,3.8,76,93.7,High
+232,Sion,19.0436,72.8633,2026-06-28,20:00,Night,28,5,6,4,13,Poor,Low,Poor,5.4,83,100,High
+233,Sion,19.0436,72.8633,2026-07-11,18:00,Evening,19,7,3,1,8,Average,Low,Poor,5.9,96,89.9,High
+234,Sion,19.0436,72.8633,2026-07-24,08:00,Day,18,6,3,6,3,Poor,Low,Poor,3.2,77,82.5,High
+235,Sion,19.0436,72.8633,2026-08-06,22:00,Night,29,14,0,9,6,Poor,Low,Average,4.5,87,100,High
+236,Sion,19.0436,72.8633,2026-08-19,08:00,Day,25,12,1,8,4,Poor,Low,Poor,5.9,69,94.7,High
+237,Sion,19.0436,72.8633,2026-09-01,17:00,Evening,26,13,1,11,1,Average,Low,Average,3.2,66,84.7,High
+238,Sion,19.0436,72.8633,2026-09-14,19:00,Evening,23,6,3,3,11,Average,Low,Poor,3.7,68,86.5,High
+239,Sion,19.0436,72.8633,2026-09-27,13:00,Day,24,7,0,1,16,Poor,Low,Average,4.4,63,84.8,High
+240,Sion,19.0436,72.8633,2026-10-10,22:00,Night,27,10,4,0,13,Average,Low,Poor,4.4,69,100,High
+241,Vikhroli,19.1115,72.9288,2026-06-22,18:00,Evening,6,3,0,2,1,Good,Low,Average,0.9,43,40.4,Low
+242,Vikhroli,19.1115,72.9288,2026-07-05,13:00,Day,8,2,2,0,4,Average,High,Poor,1.2,31,36.1,Low
+243,Vikhroli,19.1115,72.9288,2026-07-18,13:00,Day,8,3,0,1,4,Average,High,Good,1.9,21,25.9,Low
+244,Vikhroli,19.1115,72.9288,2026-07-31,23:00,Night,13,3,1,3,6,Average,Medium,Good,2.0,40,55.4,Medium
+245,Vikhroli,19.1115,72.9288,2026-08-13,15:00,Day,7,3,0,0,4,Good,Medium,Average,1.0,27,26.5,Low
+246,Vikhroli,19.1115,72.9288,2026-08-26,18:00,Evening,10,4,2,1,3,Good,High,Good,1.1,26,27.8,Low
+247,Vikhroli,19.1115,72.9288,2026-09-08,21:00,Night,8,2,0,4,2,Average,Low,Good,2.5,40,54.9,Medium
+248,Vikhroli,19.1115,72.9288,2026-09-21,18:00,Evening,9,1,0,5,3,Good,High,Good,1.2,40,29.5,Low
+249,Vikhroli,19.1115,72.9288,2026-10-04,22:00,Night,12,2,1,9,0,Average,Medium,Good,1.5,35,52.2,Medium
+250,Vikhroli,19.1115,72.9288,2026-10-17,20:00,Night,10,3,0,4,3,Average,Medium,Average,1.3,48,55.9,Medium
+251,Wadala,19.0178,72.8562,2026-06-29,13:00,Day,13,6,2,1,4,Average,High,Poor,3.3,41,48.5,Medium
+252,Wadala,19.0178,72.8562,2026-07-12,23:00,Night,11,3,0,5,3,Poor,Low,Poor,4.1,60,82.9,High
+253,Wadala,19.0178,72.8562,2026-07-25,18:00,Evening,10,3,2,4,1,Average,Medium,Good,3.7,48,48.2,Medium
+254,Wadala,19.0178,72.8562,2026-08-07,21:00,Night,14,5,3,5,1,Poor,Low,Average,3.8,62,82.3,High
+255,Wadala,19.0178,72.8562,2026-08-20,19:00,Evening,10,4,0,1,5,Average,Medium,Average,3.5,67,56.1,Medium
+256,Wadala,19.0178,72.8562,2026-09-02,10:00,Day,15,4,0,5,6,Average,Medium,Average,2.0,56,52.9,Medium
+257,Wadala,19.0178,72.8562,2026-09-15,15:00,Day,13,3,3,2,5,Average,Low,Poor,2.8,65,64.1,Medium
+258,Wadala,19.0178,72.8562,2026-09-28,21:00,Night,13,4,3,1,5,Poor,Low,Poor,4.3,79,90.2,High
+259,Wadala,19.0178,72.8562,2026-10-11,18:00,Evening,17,6,1,5,5,Average,Medium,Average,2.0,72,65.3,Medium
+260,Wadala,19.0178,72.8562,2026-10-24,20:00,Night,14,5,2,2,5,Poor,Medium,Average,3.3,56,74.2,High
+261,Lower Parel,18.9987,72.8259,2026-07-06,22:00,Night,21,5,3,4,9,Average,Medium,Poor,6.3,76,90.0,High
+262,Lower Parel,18.9987,72.8259,2026-07-19,18:00,Evening,22,5,0,7,10,Average,High,Poor,6.0,73,78.4,High
+263,Lower Parel,18.9987,72.8259,2026-08-01,22:00,Night,25,10,4,1,10,Poor,Low,Poor,4.9,85,100,High
+264,Lower Parel,18.9987,72.8259,2026-08-14,10:00,Day,15,6,2,6,1,Average,Low,Poor,4.4,71,70.5,High
+265,Lower Parel,18.9987,72.8259,2026-08-27,17:00,Evening,22,10,4,6,2,Average,Low,Poor,6.0,93,93.8,High
+266,Lower Parel,18.9987,72.8259,2026-09-09,22:00,Night,27,9,5,0,13,Average,Low,Average,6.2,98,100,High
+267,Lower Parel,18.9987,72.8259,2026-09-22,08:00,Day,19,9,1,7,2,Poor,Low,Poor,4.7,78,86.3,High
+268,Lower Parel,18.9987,72.8259,2026-10-05,17:00,Evening,23,6,4,2,11,Poor,Medium,Poor,4.1,93,94.5,High
+269,Lower Parel,18.9987,72.8259,2026-10-18,21:00,Night,29,12,1,0,16,Poor,Low,Poor,4.8,86,100,High
+270,Lower Parel,18.9987,72.8259,2026-10-31,08:00,Day,15,5,2,4,4,Average,Medium,Poor,5.7,84,69.2,Medium
+271,Byculla,18.9766,72.8331,2026-07-13,08:00,Day,6,1,1,3,1,Poor,Medium,Good,2.0,18,35.5,Low
+272,Byculla,18.9766,72.8331,2026-07-26,20:00,Night,11,5,0,5,1,Poor,Medium,Poor,2.6,50,72.6,High
+273,Byculla,18.9766,72.8331,2026-08-08,22:00,Night,13,6,2,2,3,Average,Medium,Good,2.8,50,58.8,Medium
+274,Byculla,18.9766,72.8331,2026-08-21,18:00,Evening,4,0,0,1,3,Good,High,Good,0.7,38,21.1,Low
+275,Byculla,18.9766,72.8331,2026-09-03,21:00,Night,12,2,1,6,3,Average,Low,Average,2.7,35,63.9,Medium
+276,Byculla,18.9766,72.8331,2026-09-16,10:00,Day,6,2,0,0,4,Good,Medium,Good,1.2,37,23.5,Low
+277,Byculla,18.9766,72.8331,2026-09-29,21:00,Night,12,6,0,4,2,Average,Medium,Average,2.3,34,57.1,Medium
+278,Byculla,18.9766,72.8331,2026-10-12,08:00,Day,3,1,0,0,2,Good,Medium,Good,2.1,18,16.2,Low
+279,Byculla,18.9766,72.8331,2026-10-25,18:00,Evening,11,2,1,1,7,Good,High,Average,2.3,26,34.9,Low
+280,Byculla,18.9766,72.8331,2026-11-07,17:00,Evening,9,3,1,5,0,Average,High,Good,1.0,35,35.1,Low
+281,Colaba,18.9067,72.8147,2026-07-20,19:00,Evening,15,7,0,1,7,Average,Medium,Good,3.5,48,55.2,Medium
+282,Colaba,18.9067,72.8147,2026-08-02,21:00,Night,11,5,1,2,3,Average,Low,Average,4.1,70,72.1,High
+283,Colaba,18.9067,72.8147,2026-08-15,22:00,Night,17,3,0,0,14,Poor,Low,Average,3.8,66,87.5,High
+284,Colaba,18.9067,72.8147,2026-08-28,17:00,Evening,17,4,3,9,1,Average,High,Average,3.8,57,59.5,Medium
+285,Colaba,18.9067,72.8147,2026-09-10,08:00,Day,8,3,0,3,2,Average,Medium,Good,2.1,56,38.9,Low
+286,Colaba,18.9067,72.8147,2026-09-23,15:00,Day,10,2,1,4,3,Average,Low,Poor,3.5,42,55.6,Medium
+287,Colaba,18.9067,72.8147,2026-10-06,21:00,Night,16,7,2,0,7,Poor,Low,Good,4.3,54,80.1,High
+288,Colaba,18.9067,72.8147,2026-10-19,15:00,Day,15,5,0,1,9,Good,High,Good,3.7,68,41.9,Low
+289,Colaba,18.9067,72.8147,2026-11-01,23:00,Night,16,5,0,10,1,Average,Medium,Poor,3.8,71,78.1,High
+290,Colaba,18.9067,72.8147,2026-11-14,17:00,Evening,14,6,2,4,2,Average,Low,Average,2.5,64,65.9,Medium
+291,Fort,18.9322,72.8326,2026-07-27,23:00,Night,22,10,1,0,11,Poor,Medium,Average,6.1,91,97.5,High
+292,Fort,18.9322,72.8326,2026-08-09,15:00,Day,23,9,1,8,5,Average,Low,Average,3.7,80,78.1,High
+293,Fort,18.9322,72.8326,2026-08-22,22:00,Night,30,11,3,1,15,Poor,Low,Poor,3.5,95,100,High
+294,Fort,18.9322,72.8326,2026-09-04,18:00,Evening,23,6,3,13,1,Good,Medium,Poor,5.5,74,77.3,High
+295,Fort,18.9322,72.8326,2026-09-17,20:00,Night,28,7,6,6,9,Poor,Low,Good,5.2,78,100,High
+296,Fort,18.9322,72.8326,2026-09-30,15:00,Day,16,5,0,10,1,Poor,Medium,Poor,5.3,89,79.2,High
+297,Fort,18.9322,72.8326,2026-10-13,22:00,Night,23,10,2,8,3,Poor,Low,Average,5.6,86,100,High
+298,Fort,18.9322,72.8326,2026-10-26,10:00,Day,22,5,3,13,1,Poor,Medium,Poor,5.7,82,86.9,High
+299,Fort,18.9322,72.8326,2026-11-08,17:00,Evening,19,3,0,12,4,Poor,Low,Poor,5.0,71,91.2,High
+300,Fort,18.9322,72.8326,2026-11-21,19:00,Evening,26,7,2,16,1,Poor,Low,Poor,5.8,92,100,High

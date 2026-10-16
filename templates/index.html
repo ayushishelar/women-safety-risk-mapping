@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Women Safety Risk Mapping
+    </title>
+
+
+    <!-- LEAFLET CSS -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+
+    <!-- OUR CSS -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+<header class="main-header">
+<div class="user-section">
+    <span class="welcome-user">
+        Welcome, {{ user_name }}
+    </span>
+
+    <a href="{{ url_for('logout') }}" class="logout-btn">
+        Logout
+    </a>
+</div>
+    <div>
+
+        <h1>
+            Women Safety Risk Mapping
+        </h1>
+
+        <p>
+            AI-Enabled Risk Prediction &
+            Safety Monitoring System
+        </p>
+
+    </div>
+
+
+    <div class="system-status">
+
+        <span class="status-dot"></span>
+
+        Prototype Model Active
+
+    </div>
+
+</header>
+
+<main class="container">
+    <section class="stats-grid">
+
+
+        <div class="stat-card">
+
+            <h3>
+                Total Areas
+            </h3>
+
+            <h2 id="totalAreas">
+                0
+            </h2>
+
+            <p>
+                Mumbai localities monitored
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3>
+                Low Risk
+            </h3>
+
+            <h2
+                id="lowCount"
+                class="low-text"
+            >
+                0
+            </h2>
+
+            <p>
+                Low-risk areas
+            </p>
+
+        </div>
+        
+
+        <div class="stat-card">
+
+            <h3>
+                Medium Risk
+            </h3>
+
+            <h2
+                id="mediumCount"
+                class="medium-text"
+            >
+                0
+            </h2>
+
+            <p>
+                Medium-risk areas
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3>
+                High Risk
+            </h3>
+
+            <h2
+                id="highCount"
+                class="high-text"
+            >
+                0
+            </h2>
+
+            <p>
+                High-risk areas
+            </p>
+
+        </div>
+        <div class="safe-route-section">
+
+    <a href="/safe-route" class="safe-route-btn">
+
+        <span class="safe-route-icon">
+            🛡️
+        </span>
+
+        <div class="safe-route-content">
+
+            <strong>
+                Find Safe Route
+            </strong>
+
+            <small>
+                Find a lower-risk route using
+                AI-based safety predictions
+            </small>
+
+        </div>
+
+        <span class="safe-route-arrow">
+            →
+        </span>
+
+    </a>
+
+</div>
+<div class="sos-dashboard-section">
+
+    <a href="/sos" class="sos-dashboard-btn">
+
+        <span class="sos-dashboard-icon">
+            🆘
+        </span>
+
+        <div>
+            <strong>
+                Emergency SOS
+            </strong>
+
+            <small>
+                Share location, find emergency services
+                and trigger an SOS alert
+            </small>
+        </div>
+
+        <span class="sos-dashboard-arrow">
+            →
+        </span>
+
+    </a>
+
+</div>
+
+
+    </section>
+
+
+    <section class="dashboard-grid">
+
+        <div class="panel map-panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <h2>
+                        Mumbai Risk Map
+                    </h2>
+
+                    <p>
+                        Select a marker or choose an
+                        area from the prediction panel.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="map"></div>
+
+
+            <!-- LEGEND -->
+
+            <div class="map-legend">
+
+                <div>
+                    <span
+                        class="legend-dot low-dot">
+                    </span>
+
+                    Low
+                </div>
+
+
+                <div>
+                    <span
+                        class="legend-dot medium-dot">
+                    </span>
+
+                    Medium
+                </div>
+
+
+                <div>
+                    <span
+                        class="legend-dot high-dot">
+                    </span>
+
+                    High
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel control-panel">
+
+            <h2>
+                Check Area Risk
+            </h2>
+
+            <p class="panel-description">
+
+                Select a Mumbai locality and
+                time period to estimate risk.
+
+            </p>
+
+            <div class="form-group">
+
+                <label for="areaSelect">
+                    Select Area
+                </label>
+
+                <select id="areaSelect">
+
+                    <option value="">
+                        -- Select Area --
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="timePeriodSelect">
+                    Time Period
+                </label>
+
+                <select id="timePeriodSelect">
+
+                    <option value="">
+                        Overall / Historical
+                    </option>
+
+                    <option value="Day">
+                        Day
+                    </option>
+
+                    <option value="Evening">
+                        Evening
+                    </option>
+
+                    <option value="Night">
+                        Night
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                id="predictButton"
+                type="button"
+            >
+                Predict Safety Risk
+            </button>
+
+
+            <div class="mini-notice">
+
+                Prediction is based on
+                synthetic academic demonstration data.
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <section
+        id="predictionResult"
+        class="prediction-result hidden"
+    >
+
+
+        <div class="section-title">
+
+            <div>
+
+                <p class="eyebrow">
+                    AI Risk Prediction
+                </p>
+
+                <h2 id="resultArea">
+                    --
+                </h2>
+
+            </div>
+
+
+            <div
+                id="riskBadge"
+                class="risk-badge"
+            >
+
+            </div>
+
+        </div>
+
+        <div class="result-cards">
+
+
+            <div class="result-card">
+
+                <span>
+                    Risk Score
+                </span>
+
+                <strong>
+
+                    <span id="riskScore">
+                        --
+                    </span>
+
+                    /100
+
+                </strong>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <span>
+                    Model Confidence
+                </span>
+
+                <strong id="confidence">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <span>
+                    Time Period
+                </span>
+
+                <strong id="timePeriod">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <span>
+                    Observations Used
+                </span>
+
+                <strong id="observationCount">
+                    --
+                </strong>
+
+            </div>
+
+
+        </div>
+
+        <div class="sub-section">
+
+            <h3>
+                Prediction Probabilities
+            </h3>
+
+            <div class="probability-row">
+
+                <span class="probability-name">
+                    Low
+                </span>
+
+                <div class="progress">
+
+                    <div
+                        id="lowProbabilityBar"
+                        class="progress-bar low-bar"
+                    ></div>
+
+                </div>
+
+                <strong id="lowProbability">
+                    0%
+                </strong>
+
+            </div>
+            <div class="probability-row">
+
+                <span class="probability-name">
+                    Medium
+                </span>
+
+                <div class="progress">
+
+                    <div
+                        id="mediumProbabilityBar"
+                        class="progress-bar medium-bar"
+                    ></div>
+
+                </div>
+
+                <strong id="mediumProbability">
+                    0%
+                </strong>
+
+            </div>
+
+            <div class="probability-row">
+
+                <span class="probability-name">
+                    High
+                </span>
+
+                <div class="progress">
+
+                    <div
+                        id="highProbabilityBar"
+                        class="progress-bar high-bar"
+                    ></div>
+
+                </div>
+
+                <strong id="highProbability">
+                    0%
+                </strong>
+
+            </div>
+
+
+        </div>
+
+        <div class="sub-section">
+
+            <h3>
+                Factors Used for Prediction
+            </h3>
+
+
+            <div class="factor-grid">
+
+
+                <div class="factor-item">
+
+                    <span>
+                        Total Incidents
+                    </span>
+
+                    <strong id="incidents">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="factor-item">
+
+                    <span>
+                        Harassment Cases
+                    </span>
+
+                    <strong id="harassment">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="factor-item">
+
+                    <span>
+                        Stalking Cases
+                    </span>
+
+                    <strong id="stalking">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="factor-item">
+
+                    <span>
+                        Theft Cases
+                    </span>
+
+                    <strong id="theft">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="factor-item">
+
+                    <span>
+                        Other Cases
+                    </span>
+
+                    <strong id="otherCases">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="factor-item">
+
+                    <span>
+                        Street Lighting
+                    </span>
+
+                    <strong id="lighting">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="factor-item">
+
+                    <span>
+                        Crowd Level
+                    </span>
+
+                    <strong id="crowd">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="factor-item">
+
+                    <span>
+                        Public Transport
+                    </span>
+
+                    <strong id="transport">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="factor-item">
+
+                    <span>
+                        Police Station Distance
+                    </span>
+
+                    <strong id="policeDistance">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="factor-item">
+
+                    <span>
+                        Survey Unsafe %
+                    </span>
+
+                    <strong id="unsafe">
+                        --
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <div
+            id="safetyMessage"
+            class="safety-message"
+        >
+        </div>
+    </section>
+
+<section class="incident-section">
+
+    <div class="incident-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                Community Reporting
+            </p>
+
+            <h2>
+                Report an Incident
+            </h2>
+
+            <p>
+                Submit a safety-related incident
+                observed in a Mumbai locality.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="incident-layout">
+
+        <div class="incident-form-card">
+
+            <h3>
+                Incident Details
+            </h3>
+
+
+            <!-- TYPE -->
+
+            <div class="form-group">
+
+                <label for="incidentType">
+                    Incident Type *
+                </label>
+
+                <select id="incidentType">
+
+                    <option value="">
+                        -- Select Incident Type --
+                    </option>
+
+                    <option value="Harassment">
+                        Harassment
+                    </option>
+
+                    <option value="Stalking">
+                        Stalking
+                    </option>
+
+                    <option value="Theft">
+                        Theft
+                    </option>
+
+                    <option value="Unsafe Behaviour">
+                        Unsafe Behaviour
+                    </option>
+
+                    <option value="Poor Lighting">
+                        Poor Lighting
+                    </option>
+
+                    <option value="Suspicious Activity">
+                        Suspicious Activity
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- AREA -->
+
+            <div class="form-group">
+
+                <label for="incidentArea">
+                    Location *
+                </label>
+
+                <select id="incidentArea">
+
+                    <option value="">
+                        -- Select Area --
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- DATE + TIME -->
+
+            <div class="date-time-grid">
+
+
+                <div class="form-group">
+
+                    <label for="incidentDate">
+                        Date *
+                    </label>
+
+                    <input
+                        type="date"
+                        id="incidentDate"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="incidentTime">
+                        Time *
+                    </label>
+
+                    <input
+                        type="time"
+                        id="incidentTime"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            
+
+            <div class="form-group">
+
+                <label for="incidentDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="incidentDescription"
+                    rows="5"
+                    maxlength="500"
+                    placeholder="Briefly describe the incident..."
+                ></textarea>
+
+                <small>
+                    Optional — maximum 500 characters.
+                </small>
+
+            </div>
+
+
+            <!-- ANONYMOUS -->
+
+            <div class="anonymous-option">
+
+                <input
+                    type="checkbox"
+                    id="anonymousReport"
+                    checked
+                >
+
+                <label for="anonymousReport">
+
+                    Submit anonymously
+
+                </label>
+
+            </div>
+
+
+            <button
+                id="submitIncidentButton"
+                type="button"
+                class="incident-submit-button"
+            >
+                Submit Incident Report
+            </button>
+
+
+            <div
+                id="incidentMessage"
+                class="incident-message hidden"
+            >
+            </div>
+
+
+            <div class="report-warning">
+
+                <strong>
+                    Prototype Notice:
+                </strong>
+
+                This reporting form is part of an
+                academic prototype. It is not connected
+                to police or emergency services.
+
+            </div>
+
+        </div>
+
+
+    
+        <div class="incident-summary-card">
+
+            <h3>
+                Incident Report Summary
+            </h3>
+
+
+            <div class="incident-stats">
+
+
+                <div class="incident-stat">
+
+                    <span>
+                        Total Reports
+                    </span>
+
+                    <strong id="totalReports">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="incident-stat">
+
+                    <span>
+                        Harassment
+                    </span>
+
+                    <strong id="harassmentReports">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="incident-stat">
+
+                    <span>
+                        Stalking
+                    </span>
+
+                    <strong id="stalkingReports">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="incident-stat">
+
+                    <span>
+                        Theft
+                    </span>
+
+                    <strong id="theftReports">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="incident-stat">
+
+                    <span>
+                        Other
+                    </span>
+
+                    <strong id="otherReports">
+                        0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="incident-map-info">
+
+                <h4>
+                    Map Information
+                </h4>
+
+                <p>
+                    Risk circles represent AI-generated
+                    area estimates.
+                </p>
+
+                <p>
+                    <span class="report-marker-example">
+                        !
+                    </span>
+
+                    represents a submitted incident report.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="recent-reports">
+
+        <h3>
+            Recent Incident Reports
+        </h3>
+
+
+        <div
+            id="recentReportsList"
+            class="reports-list"
+        >
+
+            <p class="empty-message">
+                No incident reports submitted yet.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
+
+
+</body>
+
+</html>

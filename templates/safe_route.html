@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Safe Route - Women Safety</title>
+
+    <!-- Leaflet CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f5f9;
+            color: #292929;
+            min-height: 100vh;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .header {
+            background: linear-gradient(
+                135deg,
+                #7b1fa2,
+                #c2185b
+            );
+
+            color: white;
+            padding: 22px 30px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .header-left h1 {
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+
+        .header-left p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .back-button {
+            background: white;
+            color: #c2185b;
+
+            padding: 10px 18px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: #fce4ec;
+        }
+
+
+        /* =========================================
+           MAIN CONTAINER
+        ========================================= */
+
+        .container {
+            width: 94%;
+            max-width: 1300px;
+
+            margin: 30px auto 50px;
+        }
+
+
+        /* =========================================
+           PAGE GRID
+        ========================================= */
+
+        .route-layout {
+            display: grid;
+
+            grid-template-columns:
+                minmax(300px, 380px)
+                1fr;
+
+            gap: 25px;
+
+            align-items: start;
+        }
+
+
+        /* =========================================
+           PANEL
+        ========================================= */
+
+        .panel {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 5px 18px
+                rgba(0,0,0,0.08);
+        }
+
+        .panel h2 {
+            font-size: 23px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .subtitle {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 22px;
+        }
+
+
+        /* =========================================
+           FORM
+        ========================================= */
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            color: #444;
+        }
+
+        .form-group select {
+            width: 100%;
+
+            padding: 12px 13px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            background: white;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .form-group select:focus {
+            border-color: #8e24aa;
+
+            box-shadow:
+                0 0 0 2px
+                rgba(142,36,170,0.10);
+        }
+
+
+        /* =========================================
+           BUTTON
+        ========================================= */
+
+        .find-button {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: linear-gradient(
+                135deg,
+                #7b1fa2,
+                #c2185b
+            );
+
+            color: white;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .find-button:hover {
+            opacity: 0.92;
+            transform: translateY(-1px);
+        }
+
+        .find-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+
+        /* =========================================
+           MESSAGE
+        ========================================= */
+
+        #message {
+            margin-top: 15px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            line-height: 1.5;
+        }
+
+        .error-message {
+            color: #c62828;
+        }
+
+        .loading-message {
+            color: #7b1fa2;
+        }
+
+
+        /* =========================================
+           RESULT
+        ========================================= */
+
+        #routeResult {
+            display: none;
+            margin-top: 25px;
+        }
+
+        #routeResult h2 {
+            margin-bottom: 15px;
+        }
+
+        .route-card {
+            background: #fafafa;
+
+            border: 1px solid #eeeeee;
+            border-left: 5px solid #7b1fa2;
+
+            border-radius: 10px;
+
+            padding: 18px;
+
+            margin-bottom: 15px;
+        }
+
+        .route-card h3 {
+            color: #7b1fa2;
+            margin-bottom: 14px;
+        }
+
+        .route-card p {
+            margin: 8px 0;
+
+            font-size: 14px;
+
+            color: #555;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================
+           SAFETY SCORE
+        ========================================= */
+
+        .safety-box {
+            margin-top: 15px;
+
+            padding: 14px;
+
+            border-radius: 8px;
+
+            text-align: center;
+        }
+
+        .safety-box h4 {
+            margin-bottom: 5px;
+        }
+
+        .safety-score {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .safety-high {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .safety-medium {
+            background: #fff8e1;
+            color: #f57f17;
+        }
+
+        .safety-low {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+
+        /* =========================================
+           RISK BADGES
+        ========================================= */
+
+        .risk-badge {
+            display: inline-block;
+
+            padding: 5px 11px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .risk-low {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .risk-medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .risk-high {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .risk-unknown {
+            background: #eeeeee;
+            color: #555;
+        }
+
+
+        /* =========================================
+           MAP
+        ========================================= */
+
+        .map-panel {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .map-title {
+            padding: 20px 22px 5px;
+        }
+
+        .map-title h2 {
+            margin-bottom: 5px;
+        }
+
+        .map-title p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        #map {
+            width: 100%;
+            height: 620px;
+        }
+
+
+        /* =========================================
+           MAP LEGEND
+        ========================================= */
+
+        .legend {
+            background: white;
+
+            padding: 10px 12px;
+
+            border-radius: 6px;
+
+            box-shadow:
+                0 1px 5px
+                rgba(0,0,0,0.3);
+
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .legend-line {
+            display: inline-block;
+
+            width: 24px;
+            height: 4px;
+
+            background: #7b1fa2;
+
+            margin-right: 7px;
+
+            vertical-align: middle;
+        }
+
+
+        /* =========================================
+           NOTICE
+        ========================================= */
+
+        .notice {
+            margin-top: 25px;
+
+            padding: 15px 18px;
+
+            background: #fff3cd;
+
+            border-left: 5px solid #ffc107;
+
+            border-radius: 8px;
+
+            color: #725b00;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media screen and (max-width: 850px) {
+
+            .route-layout {
+                grid-template-columns: 1fr;
+            }
+
+            #map {
+                height: 450px;
+            }
+
+        }
+
+
+        @media screen and (max-width: 600px) {
+
+            .header {
+                padding: 18px;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 15px;
+            }
+
+            .header-left h1 {
+                font-size: 23px;
+            }
+
+            .container {
+                width: 95%;
+
+                margin-top: 20px;
+            }
+
+            .panel {
+                padding: 18px;
+            }
+
+            .map-panel {
+                padding: 0;
+            }
+
+            #map {
+                height: 380px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<div class="header">
+
+    <div class="header-left">
+
+        <h1>
+            🛡️ Safe Route Recommendation
+        </h1>
+
+        <p>
+            Find a lower-risk route based on
+            predicted area safety information.
+        </p>
+
+    </div>
+
+    <a
+        href="/"
+        class="back-button"
+    >
+        ← Dashboard
+    </a>
+
+</div>
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<div class="container">
+
+
+    <div class="route-layout">
+
+
+        <!-- =====================================
+             LEFT SIDE
+        ====================================== -->
+
+        <div>
+
+
+            <div class="panel">
+
+                <h2>
+                    Find Safe Route
+                </h2>
+
+                <p class="subtitle">
+                    Select your starting area,
+                    destination and travel time.
+                </p>
+
+
+                <!-- SOURCE -->
+
+                <div class="form-group">
+
+                    <label for="source">
+                        📍 Source Area
+                    </label>
+
+                    <select id="source">
+
+                        <option value="">
+                            -- Select Source --
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DESTINATION -->
+
+                <div class="form-group">
+
+                    <label for="destination">
+                        🎯 Destination
+                    </label>
+
+                    <select id="destination">
+
+                        <option value="">
+                            -- Select Destination --
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TIME -->
+
+                <div class="form-group">
+
+                    <label for="timePeriod">
+                        🕒 Travel Time
+                    </label>
+
+                    <select id="timePeriod">
+
+                        <option value="Overall">
+                            Overall / Historical
+                        </option>
+
+                        <option value="Day">
+                            Day
+                        </option>
+
+                        <option value="Evening">
+                            Evening
+                        </option>
+
+                        <option value="Night">
+                            Night
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    id="findButton"
+                    class="find-button"
+                    onclick="findSafeRoute()"
+                >
+                    Find Safe Route
+                </button>
+
+
+                <!-- MESSAGE -->
+
+                <div id="message"></div>
+
+
+            </div>
+
+
+            <!-- =================================
+                 ROUTE RESULT
+            ================================== -->
+
+            <div
+                id="routeResult"
+                class="panel"
+            >
+
+                <h2>
+                    Route Information
+                </h2>
+
+                <div id="routeList"></div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =====================================
+             RIGHT SIDE MAP
+        ====================================== -->
+
+        <div class="panel map-panel">
+
+            <div class="map-title">
+
+                <h2>
+                    🗺️ Route Map
+                </h2>
+
+                <p>
+                    Source and destination will
+                    appear on the map.
+                </p>
+
+            </div>
+
+            <div id="map"></div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================================
+         SAFETY NOTICE
+    ========================================== -->
+
+    <div class="notice">
+
+        ⚠️ <strong>Safety Notice:</strong>
+
+        This system is an academic prototype.
+        Safety scores are based on predicted and
+        historical risk information and do not
+        guarantee that a route or area is safe.
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================
+     LEAFLET
+========================================= -->
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+
+<script>
+
+
+// ============================================================
+// GLOBAL VARIABLES
+// ============================================================
+
+let map;
+
+let routeLayer = null;
+
+let sourceMarker = null;
+
+let destinationMarker = null;
+
+
+// ============================================================
+// INITIALIZE MAP
+// ============================================================
+
+map = L.map("map").setView(
+    [19.0760, 72.8777],
+    11
+);
+
+
+L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+        maxZoom: 19,
+
+        attribution:
+            "&copy; OpenStreetMap contributors"
+    }
+).addTo(map);
+
+
+// ============================================================
+// MAP LEGEND
+// ============================================================
+
+const legend = L.control({
+    position: "bottomright"
+});
+
+
+legend.onAdd = function() {
+
+    const div =
+        L.DomUtil.create(
+            "div",
+            "legend"
+        );
+
+    div.innerHTML = `
+
+        <strong>Route</strong>
+        <br>
+
+        <span class="legend-line"></span>
+        Estimated Route
+
+    `;
+
+    return div;
+};
+
+
+legend.addTo(map);
+
+
+// ============================================================
+// LOAD AREAS
+// ============================================================
+
+async function loadAreas() {
+
+    const message =
+        document.getElementById(
+            "message"
+        );
+
+    try {
+
+        const response =
+            await fetch("/api/areas");
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to load areas."
+            );
+
+        }
+
+
+        const areas =
+            await response.json();
+
+
+        const sourceSelect =
+            document.getElementById(
+                "source"
+            );
+
+
+        const destinationSelect =
+            document.getElementById(
+                "destination"
+            );
+
+
+        areas.forEach(area => {
+
+            const sourceOption =
+                document.createElement(
+                    "option"
+                );
+
+
+            sourceOption.value =
+                area.area_name;
+
+
+            sourceOption.textContent =
+                area.area_name;
+
+
+            const destinationOption =
+                document.createElement(
+                    "option"
+                );
+
+
+            destinationOption.value =
+                area.area_name;
+
+
+            destinationOption.textContent =
+                area.area_name;
+
+
+            sourceSelect.appendChild(
+                sourceOption
+            );
+
+
+            destinationSelect.appendChild(
+                destinationOption
+            );
+
+        });
+
+
+        console.log(
+            "Areas loaded:",
+            areas.length
+        );
+
+    }
+    catch(error) {
+
+        console.error(
+            "Area loading error:",
+            error
+        );
+
+
+        message.className =
+            "error-message";
+
+
+        message.textContent =
+            "Unable to load areas.";
+
+    }
+
+}
+
+
+// ============================================================
+// FIND SAFE ROUTE
+// ============================================================
+
+async function findSafeRoute() {
+
+    const source =
+        document.getElementById(
+            "source"
+        ).value;
+
+
+    const destination =
+        document.getElementById(
+            "destination"
+        ).value;
+
+
+    const timePeriod =
+        document.getElementById(
+            "timePeriod"
+        ).value;
+
+
+    const message =
+        document.getElementById(
+            "message"
+        );
+
+
+    const button =
+        document.getElementById(
+            "findButton"
+        );
+
+
+    message.textContent = "";
+
+    message.className = "";
+
+
+    // --------------------------------------------------------
+    // VALIDATION
+    // --------------------------------------------------------
+
+    if (!source || !destination) {
+
+        message.className =
+            "error-message";
+
+
+        message.textContent =
+            "Please select both source and destination.";
+
+        return;
+
+    }
+
+
+    if (source === destination) {
+
+        message.className =
+            "error-message";
+
+
+        message.textContent =
+            "Source and destination cannot be the same.";
+
+        return;
+
+    }
+
+
+    try {
+
+        button.disabled = true;
+
+        button.textContent =
+            "Calculating Route...";
+
+
+        message.className =
+            "loading-message";
+
+
+        message.textContent =
+            "Calculating distance, travel time and safety score...";
+
+
+        // ----------------------------------------------------
+        // CALL FLASK API
+        // ----------------------------------------------------
+
+        const response =
+            await fetch(
+                "/api/safe-route",
+                {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        source:
+                            source,
+
+                        destination:
+                            destination,
+
+                        time_period:
+                            timePeriod
+
+                    })
+
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok || !data.success) {
+
+            throw new Error(
+                data.message
+                ||
+                "Unable to calculate route."
+            );
+
+        }
+
+
+        message.textContent = "";
+
+
+        // ----------------------------------------------------
+        // DISPLAY ROUTE INFORMATION
+        // ----------------------------------------------------
+
+        displayRoutes(
+            data.routes
+        );
+
+
+        // ----------------------------------------------------
+        // DISPLAY ROUTE ON MAP
+        // ----------------------------------------------------
+
+        if (
+            data.routes
+            &&
+            data.routes.length > 0
+        ) {
+
+            drawRoute(
+                data.routes[0]
+            );
+
+        }
+
+    }
+    catch(error) {
+
+        console.error(
+            "Safe route error:",
+            error
+        );
+
+
+        message.className =
+            "error-message";
+
+
+        message.textContent =
+            error.message;
+
+    }
+    finally {
+
+        button.disabled = false;
+
+        button.textContent =
+            "Find Safe Route";
+
+    }
+
+}
+
+
+// ============================================================
+// DISPLAY ROUTES
+// ============================================================
+
+function displayRoutes(routes) {
+
+    const result =
+        document.getElementById(
+            "routeResult"
+        );
+
+
+    const routeList =
+        document.getElementById(
+            "routeList"
+        );
+
+
+    routeList.innerHTML = "";
+
+
+    routes.forEach(route => {
+
+
+        const card =
+            document.createElement(
+                "div"
+            );
+
+
+        card.className =
+            "route-card";
+
+
+        // ----------------------------------------------------
+        // SAFETY CLASS
+        // ----------------------------------------------------
+
+        let safetyClass =
+            "safety-medium";
+
+
+        let safetyText =
+            "Moderate Safety";
+
+
+        if (route.safety_score >= 70) {
+
+            safetyClass =
+                "safety-high";
+
+            safetyText =
+                "Lower Risk";
+
+        }
+        else if (
+            route.safety_score < 40
+        ) {
+
+            safetyClass =
+                "safety-low";
+
+            safetyText =
+                "Higher Risk";
+
+        }
+
+
+        // ----------------------------------------------------
+        // ROUTE CARD
+        // ----------------------------------------------------
+
+        card.innerHTML = `
+
+            <h3>
+                🚗 ${route.route_name}
+            </h3>
+
+
+            <p>
+
+                <strong>
+                    📍 Route:
+                </strong>
+
+                ${route.areas.join(" → ")}
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    📏 Estimated Distance:
+                </strong>
+
+                ${route.distance_km} km
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    ⏱ Estimated Travel Time:
+                </strong>
+
+                ${route.estimated_minutes}
+                minutes
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Source Risk:
+                </strong>
+
+                ${createRiskBadge(
+                    route.source_risk
+                )}
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Destination Risk:
+                </strong>
+
+                ${createRiskBadge(
+                    route.destination_risk
+                )}
+
+            </p>
+
+
+            <div
+                class="safety-box ${safetyClass}"
+            >
+
+                <h4>
+                    🛡️ ${safetyText}
+                </h4>
+
+                <div class="safety-score">
+
+                    ${route.safety_score}/100
+
+                </div>
+
+                <div>
+                    Safety Score
+                </div>
+
+            </div>
+
+        `;
+
+
+        routeList.appendChild(
+            card
+        );
+
+    });
+
+
+    result.style.display =
+        "block";
+
+}
+
+
+// ============================================================
+// CREATE RISK BADGE
+// ============================================================
+
+function createRiskBadge(risk) {
+
+    let cssClass =
+        "risk-unknown";
+
+
+    if (risk === "Low") {
+
+        cssClass =
+            "risk-low";
+
+    }
+    else if (risk === "Medium") {
+
+        cssClass =
+            "risk-medium";
+
+    }
+    else if (risk === "High") {
+
+        cssClass =
+            "risk-high";
+
+    }
+
+
+    return `
+
+        <span class="risk-badge ${cssClass}">
+
+            ${risk}
+
+        </span>
+
+    `;
+
+}
+
+
+// ============================================================
+// DRAW ROUTE ON MAP
+// ============================================================
+
+function drawRoute(route) {
+
+    if (
+        !route.coordinates
+        ||
+        !route.coordinates.source
+        ||
+        !route.coordinates.destination
+    ) {
+
+        console.log(
+            "Route coordinates unavailable."
+        );
+
+        return;
+
+    }
+
+
+    const source =
+        route.coordinates.source;
+
+
+    const destination =
+        route.coordinates.destination;
+
+
+    // --------------------------------------------------------
+    // REMOVE OLD MAP OBJECTS
+    // --------------------------------------------------------
+
+    if (routeLayer) {
+
+        map.removeLayer(
+            routeLayer
+        );
+
+    }
+
+
+    if (sourceMarker) {
+
+        map.removeLayer(
+            sourceMarker
+        );
+
+    }
+
+
+    if (destinationMarker) {
+
+        map.removeLayer(
+            destinationMarker
+        );
+
+    }
+
+
+    // --------------------------------------------------------
+    // SOURCE MARKER
+    // --------------------------------------------------------
+
+    sourceMarker =
+        L.marker([
+            source.latitude,
+            source.longitude
+        ])
+        .addTo(map)
+        .bindPopup(
+            "<b>📍 Source</b><br>"
+            +
+            route.areas[0]
+        );
+
+
+    // --------------------------------------------------------
+    // DESTINATION MARKER
+    // --------------------------------------------------------
+
+    destinationMarker =
+        L.marker([
+            destination.latitude,
+            destination.longitude
+        ])
+        .addTo(map)
+        .bindPopup(
+            "<b>🎯 Destination</b><br>"
+            +
+            route.areas[
+                route.areas.length - 1
+            ]
+        );
+
+
+    // --------------------------------------------------------
+    // DRAW ESTIMATED LINE
+    // --------------------------------------------------------
+
+    routeLayer =
+        L.polyline(
+            [
+
+                [
+                    source.latitude,
+                    source.longitude
+                ],
+
+                [
+                    destination.latitude,
+                    destination.longitude
+                ]
+
+            ],
+            {
+                color: "#7b1fa2",
+                weight: 6,
+                opacity: 0.8
+            }
+        )
+        .addTo(map);
+
+
+    // --------------------------------------------------------
+    // FIT MAP TO ROUTE
+    // --------------------------------------------------------
+
+    const bounds =
+        L.latLngBounds(
+
+            [
+                source.latitude,
+                source.longitude
+            ],
+
+            [
+                destination.latitude,
+                destination.longitude
+            ]
+
+        );
+
+
+    map.fitBounds(
+        bounds,
+        {
+            padding: [50, 50]
+        }
+    );
+
+}
+
+
+// ============================================================
+// START PAGE
+// ============================================================
+
+loadAreas();
+
+
+</script>
+
+
+</body>
+
+</html>

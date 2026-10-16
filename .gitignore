@@ -1,0 +1,35 @@
+# Python virtual environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Private user data
+uploads/
+instance/
+private/
+*.log
+
+# Editor files
+.vscode/
+.idea/
+
+# Operating system
+.DS_Store
+Thumbs.db
+women-safety-mobile/
